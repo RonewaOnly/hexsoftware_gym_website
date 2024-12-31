@@ -3,59 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym -Fitness-Gold</title>
+    <title>Gym Fitness Gold</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header>
         <nav>
-            \begin{itemize}
-                <li><a href="#Facilities">Facilities</a></li>
-                <li><a href="#serivces">Services</a></li>
-                <li><a href="#memeberShip">Membership</a></li>
+            <ul>
+                <li><a href="#presentation" class="active">Home</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#membership">Membership</a></li>
                 <li><a href="#contact">Contact</a></li>
-        </nav>        
-
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section id="presentation">
-            <div class="introduction">
-                <div class="intro-text">
-                    <h1>Get Fit</h1>
-                    <p>Join us and get fit</p>
-                </div>
-                <div class="cta">
-                    <button>Join Now</button>
-                </div>
-            </div>
-            <div class="cover">
-                <img src="gym.jpg" alt="">
-            </div>
-        </section>
-        <section id="Facilities">
-            <h2>Our Facilities</h2>
-        </section>
-        <section id="serivces">
-                <li>Cardio</li>
-                <li>Weight Lifting</li>
-                <li>Yoga</li>
-                <li>Spinning</li>
-                <li>Swimming</li>
-                <li>Boxing</li>
 
-        </section>
-        <section id="memeberShip">
-            <h2>Membership</h2>                        
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
+    <section id="presentation">
+        <div class="introduction">
+            <h1>Get Fit With Us</h1>
+            <p>Transform your life with state-of-the-art facilities and expert guidance</p>
+            <div class="cta">
+                <button onclick="document.getElementById('membership').scrollIntoView({behavior: 'smooth'})">Join Now</button>
+            </div>
+        </div>
+    </section>
 
-        </section>
-    </main>
+    <section id="facilities">
+        <h2>Our Facilities</h2>
+        <div class="facilities-grid">
+            <div class="facility-card">
+                <img src="./assets/images/gym-s7.jpg" alt="Cardio Zone"/>
+                <h3>Cardio Zone</h3>
+                <p>Latest equipment for cardiovascular training</p>
+            </div>
+            <div class="facility-card">
+                <img src="./assets/images/gym-s5.jpg" alt="Weight Training"/>
+
+                <h3>Weight Training</h3>
+                <p>Premium weights and resistance machines</p>
+            </div>
+            <div class="facility-card">
+                <img src="./assets/images/gym-s3.jpg" alt="Yoga Studio"/>
+                <h3>Yoga Studio</h3>
+                <p>Peaceful space for mind-body wellness</p>
+            </div>
+            <div class="facility-card">
+                <h3>Swimming Pool</h3>
+                <p>Olympic-sized pool with dedicated lanes</p>
+            </div>
+            <div class="facility-card">
+                <h3>Boxing Ring</h3>
+                <p>Professional boxing and training area</p>
+            </div>
+            <div class="facility-card">
+                <h3>Spinning Studio</h3>
+                <p>High-energy indoor cycling space</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Personal Training</h3>
+                <p>One-on-one customized training sessions</p>
+            </div>
+            <div class="service-card">
+                <h3>Group Classes</h3>
+                <p>Variety of instructor-led fitness classes</p>
+            </div>
+            <div class="service-card">
+                <h3>Nutrition Planning</h3>
+                <p>Expert dietary guidance and meal plans</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership">
+        <h2>Membership Plans</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Basic</h3>
+                <p>$29/month</p>
+                <p>Access to all basic facilities</p>
+            </div>
+            <div class="service-card">
+                <h3>Premium</h3>
+                <p>$49/month</p>
+                <p>Additional access to classes</p>
+            </div>
+            <div class="service-card">
+                <h3>Elite</h3>
+                <p>$79/month</p>
+                <p>Full access + personal training</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button class="cta button">Send Message</button>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Gym Fitness Gold</p>
+        <p>&copy; 2024 Gym Fitness Gold. All rights reserved.</p>
     </footer>
-    
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active nav link updater
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                if (window.scrollY >= section.offsetTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('nav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
