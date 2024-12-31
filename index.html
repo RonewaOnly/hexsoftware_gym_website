@@ -46,7 +46,6 @@
         </div>
         <div class="facility-card">
           <img src="./assets/images/gym-s5.png" alt="Weight Training" />
-
           <h3>Weight Training</h3>
           <p>Premium weights and resistance machines</p>
         </div>
@@ -56,31 +55,19 @@
           <p>Peaceful space for mind-body wellness</p>
         </div>
         <div class="facility-card">
-          <img src="./assets/images/gym-s8.png" alt="Yoga Studio" />
+          <img src="./assets/images/gym-s8.png" alt="Swimming Pool" />
           <h3>Swimming Pool</h3>
           <p>Olympic-sized pool with dedicated lanes</p>
         </div>
         <div class="facility-card">
           <img src="./assets/images/gym-s9.png" alt="Boxing Ring" />
-
           <h3>Boxing Ring</h3>
           <p>Professional boxing and training area</p>
         </div>
         <div class="facility-card">
-          <img src="./assets/images/gym-s2.png" alt="Yoga Studio" />
-
+          <img src="./assets/images/gym-s2.png" alt="Spinning Studio" />
           <h3>Spinning Studio</h3>
           <p>High-energy indoor cycling space</p>
-        </div>
-      </div>
-      <div class="showcase">
-        <div class="showcase-content">
-          <h3 class="showcase-title"></h3>
-          <p class="showcase-description"></p>
-        </div>
-        <div class="showcase-navigation">
-          <button class="prev-btn">&lt;</button>
-          <button class="next-btn">&gt;</button>
         </div>
       </div>
     </section>
@@ -89,20 +76,17 @@
       <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
-          <img src="./assets/images/gym-s1.png" alt="Yoga Studio" />
-
+          <img src="./assets/images/gym-s1.png" alt="Personal Training" />
           <h3>Personal Training</h3>
           <p>One-on-one customized training sessions</p>
         </div>
         <div class="service-card">
-            <img src="./assets/images/gym-s10.png" alt="Group Classes" />
-
+          <img src="./assets/images/gym-s10.png" alt="Group Classes" />
           <h3>Group Classes</h3>
           <p>Variety of instructor-led fitness classes</p>
         </div>
         <div class="service-card">
-            <img src="./assets/images/gym-s11.png" alt="Nutrition Planning" />
-
+          <img src="./assets/images/gym-s11.png" alt="Nutrition Planning" />
           <h3>Nutrition Planning</h3>
           <p>Expert dietary guidance and meal plans</p>
         </div>
@@ -116,16 +100,19 @@
           <h3>Basic</h3>
           <p>$29/month</p>
           <p>Access to all basic facilities</p>
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Select Plan</button>
         </div>
         <div class="service-card">
           <h3>Premium</h3>
           <p>$49/month</p>
           <p>Additional access to classes</p>
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Select Plan</button>
         </div>
         <div class="service-card">
           <h3>Elite</h3>
           <p>$79/month</p>
           <p>Full access + personal training</p>
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Select Plan</button>
         </div>
       </div>
     </section>
@@ -144,33 +131,5 @@
       <p>&copy; 2024 Gym Fitness Gold. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
-
-    <script>
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Active nav link updater
-      window.addEventListener("scroll", () => {
-        let current = "";
-        document.querySelectorAll("section").forEach((section) => {
-          if (window.scrollY >= section.offsetTop - 60) {
-            current = section.getAttribute("id");
-          }
-        });
-        document.querySelectorAll("nav a").forEach((a) => {
-          a.classList.remove("active");
-          if (a.getAttribute("href").includes(current)) {
-            a.classList.add("active");
-          }
-        });
-      });
-    </script>
   </body>
 </html>

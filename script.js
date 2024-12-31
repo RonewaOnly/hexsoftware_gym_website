@@ -1,3 +1,28 @@
+   // Smooth scrolling
+   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+  // Active nav link updater
+  window.addEventListener("scroll", () => {
+    let current = "";
+    document.querySelectorAll("section").forEach((section) => {
+      if (window.scrollY >= section.offsetTop - 60) {
+        current = section.getAttribute("id");
+      }
+    });
+    document.querySelectorAll("nav a").forEach((a) => {
+      a.classList.remove("active");
+      if (a.getAttribute("href").includes(current)) {
+        a.classList.add("active");
+      }
+    });
+  });
+
 const images = [
     {
         title: "State-of-the-art Equipment",
